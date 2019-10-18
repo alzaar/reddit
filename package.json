@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node bin/dev -d lib"
+    "start": "nodemon bin/dev",
+    "clean": "rm-rf dist",
+    "build": "npm run clean && mkdir dist && babel server -s -d dist",
+    "production": "npm run build && nodemon bin/prod"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +19,11 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/register": "^7.6.2",
     "babel-register": "^6.26.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.5"
   }
 }

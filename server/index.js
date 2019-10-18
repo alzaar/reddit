@@ -1,5 +1,7 @@
-import test from './test'
+import app from './app'
 
-test('hello')
+const port = 3000
 
-console.log(process.env.Token, 'klsahjlkfjlkj')
+app.listen(port, () => {
+    console.log(`Listening on port:${port}`)
+})
